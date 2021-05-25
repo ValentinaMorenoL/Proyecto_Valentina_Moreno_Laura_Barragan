@@ -1,0 +1,7 @@
+---
+title: "Análisis preliminar"
+author: "Valentina Moreno y Laura Barragan"
+date: "24/5/2021"
+output: word_document
+---
+

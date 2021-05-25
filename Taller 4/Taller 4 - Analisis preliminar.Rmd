@@ -1,0 +1,245 @@
+---
+title: "Taller 4 -  Análisis descriptivo para Proyecto Final"
+author: "Valentina Moreno y Laura Barragan"
+date: "16/5/2021"
+output:
+  word_document: default
+  pdf_document: default
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(haven)
+library(knitr)
+library(naniar)
+library(stargazer)
+library(GGally)
+```
+
+## Cargar las bases de datos
+
+```{r}
+rm(list = ls())
+Base_ninos <- read_sav("")
+Base_adultos <- read_sav("Datos/Enti_adultos.sav")
+```
+
+## Adecuación de la base de datos para el análisis
+
+```{r}
+Base_ninos <- Base_ninos %>%
+rename(Ninos_tiempo = "P6237", Nino_sexo = "P220", Nino_edad = "P6037", Nino_personas_hogar = "P6008", Nino_educ = "P6170", Nino_factor_exp = Fex_c)
+
+Ninos_interes <- Base_ninos %>%
+  select(starts_with("Nino"), Directorio, Secuencia_p, Orden)
+
+Base_adultos <- Base_adultos %>%
+rename(Adult_disminucion_ing = "P6047", Adult_factor_exp = Fex_c)
+
+Adult_interes <- Base_adultos %>%
+  select(starts_with("Adult"), Directorio, Secuencia_p, Orden)
+
+Base_completa <- left_join(Ninos_interes, Adult_interes, by = c("Directorio", "Secuencia_p", "Orden"))
+
+Base_completa <- Base_completa %>%
+  relocate("Directorio", "Secuencia_p", "Orden","Ninos_tiempo", "Adult_disminucion_ing", "Nino_personas_hogar", "Nino_sexo", "Nino_edad", "Nino_educ", "Adult_factor_exp", "Nino_factor_exp")
+
+```
+
+## Manejo de valores faltantes
+
+En cuanto al manejo de datos faltantes para la variable llamada *Adult_disminucion_ing* que da cuenta de la disminucion de los ingresos en el hogar durante los ultimos 12 meses, en principio tenia dos categorias de respuesta, 1 para si y 2 para no; esta variable tenia un porcentaje de 31,86% de datos faltantes, sin embargo, luego de el analisis realizado, decidimos reemplazar esos valores faltantes por una tercera categoria de respuesta representada por el numero 0, esta nueva categoria de respuesta representara aquellas familias cuyos ingresos se mantuvieron constantes o aumentaron durante los ultimos 12 meses.
+
+Por otro lado, en cuanto al factor de expansion de la base de datos de los adultos, que debe entenderse como la cantidad de personas en la población que representa una persona en la muestra tenia un porcentaje de datos faltantes del 31,86%. Dado el comportamiento de las observaciones de esta variable, se decidio rellenar esos valores faltantes con valores completos que estuvieran antes o despúes de los faltantes.
+
+Finalmente, todas las variables obtenidas de la base de datos de los niños tenian un porcentaje de valores faltantes entre el 30-35%  y segun la grafica pudimos evidenciar que estos valores faltantes aparecian a partir de la observacion 50.000 y teniendo en cuenta que las variables de mayor interes para este estudio son las obtenidas de la base de datos que da informacion de los niños, decidimos eliminar los valores faltantes de todas las variables, teniendo en cuenta que el procentaje de datos que quedaba disponible para realizar los analisis era del 76,4%. 
+
+```{r}
+faltantes_antes <- vis_miss(Base_completa)
+faltantes_antes
+
+ggsave( "Faltantes_antes.pdf", faltantes_antes)
+
+Base_completa <- replace_na(data = Base_completa, replace = list(Adult_disminucion_ing = 0))
+Base_completa <- fill(Base_completa, Adult_factor_exp)
+Base_completa <-na.omit(Base_completa)
+
+faltantes_final <- vis_miss(Base_completa)
+faltantes_final
+
+ggsave( "Faltantes_final.pdf", faltantes_final)
+```
+
+## Reconocimiento de las variables como numero o factor en R
+
+```{r,warning=FALSE}
+class(Base_completa$Directorio)
+class(Base_completa$Secuencia_p)
+class(Base_completa$Orden)
+class(Base_completa$Ninos_tiempo)
+class(Base_completa$Nino_sexo)
+class(Base_completa$Nino_edad)
+class(Base_completa$Nino_personas_hogar)
+class(Base_completa$Nino_educ)
+class(Base_completa$Nino_factor_exp)
+class(Base_completa$Adult_factor_exp)
+class(Base_completa$Adult_disminucion_ing)
+
+Base_completa <- Base_completa %>% 
+  mutate(Ninos_tiempo = as.factor(Ninos_tiempo)) %>% 
+  mutate(Nino_sexo = as.factor(Nino_sexo)) %>% 
+  mutate(Nino_edad = as.numeric(Nino_edad)) %>% 
+  mutate(Nino_personas_hogar = as.numeric(Nino_personas_hogar)) %>% 
+  mutate(Nino_educ = as.factor(Nino_educ)) %>% 
+  mutate(Adult_disminucion_ing = as.factor(Adult_disminucion_ing))
+
+```
+
+```{r}
+Base_completa <- Base_completa %>% 
+  mutate(Mujer = recode(Nino_sexo, "1" = 0, "2" = 1))%>% 
+  mutate(Asistencia = recode(Nino_educ, "2" = 0, "1" = 1))
+
+class(Base_completa$Mujer)
+class(Base_completa$Asistencia)
+
+Base_completa <- Base_completa %>% 
+  mutate(Mujer = as.factor(Mujer)) %>% 
+  mutate(Asistencia = as.factor(Asistencia))
+
+```
+
+## Estadísticas descriptivas de las variables de interes
+
+```{r}
+f_abs_dep <- table(Base_completa$Ninos_tiempo)
+f_abs_dep
+
+f_rel_dep <- prop.table(table(Base_completa$Ninos_tiempo))*100
+f_rel_dep
+
+distribucion_dep <- cbind(Absoluta = f_abs_dep, Relativa = f_rel_dep)
+distribucion_dep
+
+f_abs_indep <- table(Base_completa$Adult_disminucion_ing)
+f_abs_indep
+
+f_rel_indep <- prop.table(table(Base_completa$Adult_disminucion_ing))*100
+f_rel_indep
+
+distribucion_indep <- cbind(Absoluta = f_abs_indep, Relativa = f_rel_indep)
+distribucion_indep
+
+f_absoluta_con <- table(Base_completa$Nino_sexo,
+                    Base_completa$Asistencia)
+f_absoluta_con
+
+f_relativa_total <- prop.table(f_absoluta_con)
+round(f_relativa_total, 4) * 100
+
+stargazer(as.data.frame(Base_completa), type = "text", 
+          out = "Tabla_1", 
+          title = "Tabla 1 - Estadística Descriptiva")
+
+#Coeficientes de variacion
+
+coeficiente_personas <- sd(Base_completa$Nino_personas_hogar, na.rm=TRUE)/mean(Base_completa$Nino_personas_hogar, na.rm=TRUE) * 100
+coeficiente_personas
+
+coeficiente_edad <- sd(Base_completa$Nino_edad, na.rm=TRUE)/mean(Base_completa$Nino_edad, na.rm=TRUE) * 100
+coeficiente_edad
+```
+
+## Gráﬁcos de barras para la variable dependiente y para la principal variable independiente.
+
+```{r}
+Variable_depen <- Base_completa %>% count(Ninos_tiempo)%>%
+  mutate(prop = n/sum(n)*100)
+
+ggplot(Variable_depen, aes(Ninos_tiempo, prop)) +
+  geom_bar(stat = "identity", fill = "lightpink", color = c ("lightpink")) + 
+  labs(x= "Categoria ", y= "%Porcentaje", title = "Categoria en la que los niños ocuparon la mayor parte de su tiempo ", subtitle = " La semana anterior a ser encuestados") + 
+   theme_minimal()
+```
+
+```{r}
+Variable_indep <- Base_completa %>% count(Adult_disminucion_ing)%>%
+  mutate(prop1 = n/sum(n)*100)
+
+ggplot(Variable_indep, aes(Adult_disminucion_ing, prop1)) +
+  geom_bar(stat = "identity", fill = "lightblue1", color =  ("lightblue1")) + 
+  labs(x= "Categoria ", y= "%Porcentaje", title = "Comportamiento del ingreso del hogar  ", subtitle = " En los últimos 12 meses") + 
+   theme_minimal()
+```
+## Correlación entre cada pareja de variables cuantitativas y tablas cruzadas para cada par de variables categoricas.
+
+```{r}
+correlaciones_num <- cor(Base_completa$Nino_personas_hogar, Base_completa$Nino_edad)
+correlaciones_num*100
+
+
+table(Base_completa$Ninos_tiempo, Base_completa$Adult_disminucion_ing)
+table(Base_completa$Ninos_tiempo, Base_completa$Nino_sexo)
+table(Base_completa$Ninos_tiempo, Base_completa$Asistencia)
+```
+
+## Gráﬁcas de relación entre cada variable independiente y la variable dependiente.
+
+```{r}
+ggplot(data = Base_completa, mapping = aes(x = Nino_edad )) + 
+  geom_freqpoly() + 
+  facet_wrap(vars(Ninos_tiempo))+
+  labs(x= "Edad de los niños", y= "Frecuencia", title = "Relación entre la edad de los niños y la distribución de su tiempo")
+```
+
+
+```{r}
+ggplot(data = Base_completa, mapping = aes(x = Nino_personas_hogar)) + 
+  geom_freqpoly(color= "orchid1") + 
+  facet_wrap(vars(Ninos_tiempo ))+
+  labs(x= "Categorias distribución de tiempo", y= "Frecuencia", title = "Relación entre el número de personas en su hogar y la distribución del tiempo de los niños ")
+```
+
+```{r}
+ggplot(data = Base_completa, 
+       mapping = aes(x = Adult_disminucion_ing ,
+                     fill = Ninos_tiempo )) +
+  geom_bar()+
+  labs(x = "Categorias de disminución de ingresos en el hogar", title = "Relación entre la disminucion de ingresos en el hogar y la distribución del tiempo de los niños")
+```
+
+```{r}
+ggplot(data = Base_completa, 
+       mapping = aes(x = Asistencia ,
+                     fill = Ninos_tiempo )) +
+  geom_bar()+
+  labs(x = "Asistencia de los niños a una institución de educación formal", title = "Relación entre la asistencia de los niños a la educaión formal y la distribución de su tiempo")
+```
+
+```{r}
+ggplot(data = Base_completa, 
+       mapping = aes(x = Nino_sexo ,
+                     fill = Ninos_tiempo )) +
+  geom_bar()+
+   labs(x = "Sexo de los niños", title = "Relación entre el sexo de los niños y la distribución de su tiempo")
+```
+
+## Conclusiones sobre la distribución de las variables de interés y sobre la relación entre estas variables
+
+En primer lugar, es importante analizar el comportamiento de la variable dependiente, que corresponde al uso del tiempo de los niños; segun el diagrama de barras analizado, pudimos evidenciar que la mayoria de los niños ocupan su tiempo estudiando o en vacaciones escolares. 
+
+La variable independiente de mayor interes para esta investigación el nivel de ingresos de los hogares, utilizando como proxy la variable *Adult_disminucion_ing* que nos permite conocer si existio una disminución de los ingresos del hogar en los últimos doce meses resulto evidente que en mas del 40% de los hogares los ingresos se mantuvieron constantes o aumentaron y alrededor del 35% no tuvieron una disminucion de sus ingresos durante el ultimo año.
+
+Por otra parte,el coeficiente de correlacion entre las unicas variables de control numericas, que son la edad de los niños y el numero de personas en el hogar fue  de -2,7, lo cual demuestra una relacion inversa entre estas variables, es decir, a medida que la edad del niño aumenta, el numero de personas con las que vive en su hogar tiende a disminuir.
+
+En cuanto a la relacion de la variable dependiente con la edad de los niños, es posible conluir que  estudiar y estar en vacaciones presentan la mayor variabilidad a lo largo de todas las edades; por el contrario, en las actividades de buscar trabajo y estar incapacitado permanentemente para trabajar la frecuencia es practicamente nula. Además, los niños que se encontraban trabajando o realizando actividades en el hogar lo hacen a partir de los 10 años, en edades anteriores no se evidencia una participacion relevante en estas labores. Finalmente, en la categoria de otras actividades se observa una variación constante dentro de un rango pequeño a lo largo de todas las edades.
+
+La relacion entre la distribucion del timpo de los niños y el numero de personas en su hogar nos muestra que los niños que gastan la mayor parte de su tiempo trabajando, realizando oficios en el hogar o haciendo otras actividades presentan una leve variacion en cuanto al numero de personas con las que viven en sus primeros 10 años de vida, de ahi hasta los 17 años, que es el periodo que se tiene en cuenta en la encuesta, la variacion es practicamente nula. Adicionalmente, los niños que dedican la mayor parte de su tiempo a estudiar y estar en vacaciones escolares tambien presentan una alta variacion durante sus primeros 10 años respecto al numero de personas con las que viven.
+
+La relacion entre la disminucion de ingresos en el hogar y la distribución del tiempo de los niños muestra que para toda la muestra de hogares, independientemente de si se dio o no una disminucion de ingresos durante los ultimos 12 meses, los niños dedican la mayor parte de su tiempo a estudiar o a estar en vacaciones estudiantiles.
+
+Por ultimo, con la relacion entre el sexo y la distribución del tiempo de los niños es posible deducir que los niños y niñas dedican la mayor parte de su tiempo a estudiar o a estar en vacaciones estudiantiles.
+
