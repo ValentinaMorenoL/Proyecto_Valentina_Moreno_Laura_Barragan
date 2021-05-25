@@ -1,7 +1,7 @@
 ---
 title: "Analisis preliminar"
-author: "Valentina Moreno"
-date: "23/5/2021"
+author: "Valentina Moreno y Laura Barragan"
+date: "24/5/2021"
 output: word_document
 ---
 
@@ -13,7 +13,7 @@ output: word_document
 
 ### Variable dependiente
 
-Como variable dependiente se consideraron a los niños entre 5 y 17 años de edad que en las últimas cuatro semanas hicieron alguna diligencia para conseguir un trabajo o instalar un negocio, utilizando la variable P6280 de la Enti_niños, que tiene 2 categorias de respuesta que son:
+Como variable dependiente se consideraron a los niños entre 5 y 17 años de edad que en las últimas cuatro semanas hicieron alguna diligencia para conseguir trabajo o instalar un negocio, utilizando la variable P6280 de la Enti_niños, que tiene 2 categorías de respuesta:
 
 1.  si
 2.  No
@@ -97,7 +97,7 @@ Base_completa <- Base_completa %>%
 
 En cuanto al manejo de datos faltantes para la variable llamada *Adult_disminucion_ing* que da cuenta de la disminucion de los ingresos en el hogar durante los ultimos 12 meses, en principio tenia dos categorias de respuesta, 1 para si y 2 para no; esta variable tenia un porcentaje de 46,79% de datos faltantes, sin embargo, luego de el analisis realizado, decidimos reemplazar esos valores faltantes por una tercera categoria de respuesta representada por el numero 3, esta nueva categoria de respuesta representara aquellas familias que no tuvieron ingresos durante los ultimos 12 meses.
 
-Por otro lado, en cuanto al factor de expansion de la base de datos de los adultos, que debe entenderse como la cantidad de personas en la población que representa una persona en la muestra tenia un porcentaje de datos faltantes del 46,79%. Dado el comportamiento de las observaciones de esta variable, se decidio rellenar esos valores faltantes con valores completos que estuvieran antes o despúes de los faltantes.
+Por otro lado, en cuanto al *factor de expansion de la base de datos de los adultos*, que debe entenderse como la cantidad de personas en la población que representa una persona en la muestra tenia un porcentaje de datos faltantes del 46,79%. Dado el comportamiento de las observaciones de esta variable, se decidio rellenar esos valores faltantes con valores completos que estuvieran antes o despúes de los faltantes.
 
 Finalmente, luego de modificar los valores faltantes de esas dos variables, la base de datos total quedo con un porcentaje de valores faltantes de 1,7%, por lo cual decidimos eliminar los valores faltantes de todas las variables, teniendo en cuenta que el procentaje de datos que quedaba disponible para realizar los análisis era del 98,3%.
 
@@ -150,11 +150,11 @@ class(Base_completa$Nino_trabajo)
 
 ## Plan de análisis
 
-El objetivo central del siguiente documento es determinar en qué medida los diferentes factores socioeconómicos influyen en el trabajo infantil de los niños entre los 5 y 17 de edad en Bogotá durante el año 2011, para ello se realizará una descripción estadística de las variables y posteriormente se llevará a cabo una regresión lineal, utilizando como variable explicada principal la principal actividad del infante durante la semana anterior a la encuesta, la variable explicativa principal es la disminución de ingresos en el último año como aproximación al nivel de pobreza del hogar; además, se agregaron 4 variables de control para evitar un sesgo por variable omitida.
+El objetivo central del siguiente documento es determinar en qué medida los diferentes factores socioeconómicos influyen en el trabajo infantil de los niños entre los 5 y 17 de edad en Bogotá durante el año 2011, para ello se realizará una descripción estadística de las variables y posteriormente se llevará a cabo una regresión lineal, utilizando como variable dependiente a los niños entre 5 y 17 años de edad que en las últimas cuatro semanas hicieron alguna diligencia para conseguir un trabajo o instalar un negocio, la variable explicativa principal es la disminución de ingresos en el último año como aproximación al nivel de pobreza del hogar; además, se agregaron 4 variables de control, el sexo, la edad, el número de personas en el hogar y la educacion de los niños para evitar un sesgo por variable omitida.
 
-La primera regresión que se analizará tendrá en cuenta únicamente el efecto de la disminución de los ingresos en el hogar durante los últimos 12 meses sobre la principal actividad en la que los niños emplearon su tiempo la semana pasada. La ecuación es la siguiente:
+La primera regresión que se analizará tendrá en cuenta únicamente el efecto de la disminución de los ingresos en el hogar durante los últimos 12 meses sobre los niños que durante el último mes intentaron conseguir trabajo o instalar un negocio. La ecuación a estimar es la siguiente:
 
-$Y = \beta_0 + \beta_1I + e$
+  $Y = \beta_0 + \beta_1I + e$
 
 Donde *Y* representa la variable dependiente que viene dada por la busqueda de trabajo de los niños en las ultimas 4 semanas, *I* es la variable independiente principal que muestra la disminución de los ingresos en el hogar durante el último año y *e* es el término del error.
 
@@ -165,24 +165,23 @@ confint(modelo_1)
 
 stargazer(modelo_1, title = "Tabla 1", type = "text", out = "modelo1.txt")
 
-
 ```
 
-Con la información de la Tabla 1 podemos inferir que, en primer lugar, no tiene ningun sentido interpretar el coeficiente $\beta_0$ teniendo en cuenta que la variable dependiente es binaria y la variable explicativa tiene mas de 2 categorias de respuesta, por lo tanto esta constante no se tiene en cuenta. 
+Con la información de la Tabla 1 podemos inferir que, en primer lugar, no tiene ningún sentido interpretar el coeficiente $\beta_0$ teniendo en cuenta que la variable dependiente es binaria y la variable explicativa tiene mas de 2 categorias de respuesta, por lo tanto esta constante no se tiene en cuenta. 
 
-El coeficiente de la variable Adult_disminucion_ing2 indica que en los hogares en los que no diminuyo el ingreso en los ultimos 12 meses tienen 0,00004289 menos probabilidad en comparación con los hogares en donde si disminuyo el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas.
+El coeficiente de la variable Adult_disminucion_ing2 indica que en los hogares en los que no diminuyo el ingreso en los ultimos 12 meses tienen 0,00004 menos probabilidad en comparación con los hogares en donde si disminuyo el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas.
 
-Además, el coeficiente de la variable Adult_disminucion_ing3 indica que en los hogares que no tuvieron ingresos en los ultimos 12 meses tienen 0,001,725 más probabilidad en comparación con los hogares en donde si disminuyo el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas.
+Además, el coeficiente de la variable Adult_disminucion_ing3 indica que en los hogares que no tuvieron ingresos en los ultimos 12 meses tienen 0,002 más probabilidad en comparación con los hogares en donde si disminuyo el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas.
 
 Por otra parte, podemos evidenciar que ninguno de los coeficientes de la variable Adult_disminucion_ing no son estadísticamente significativos, esto con un nivel de confianza del 95%  y un valor p (0.979 y 0.274) mayor a 0,1 de significancia. Que no sean estadísticamente significativos indica que no se puede rechazar la hipótesis nula de que los coeficiente son iguales a 0, en favor de la hipótesis alternativa de que los coeficientes son diferente a 0.
 
 Esto tambien se puede confirmar analizando los intervalos de confianza de las variables, ya que para todas las categorias de respuesta de la variable Adult_disminucion_ing el intervalo incluye el cero, por lo que no son estadisticamente significativos.
 
-Adicionalmente, el $R^2$ (0,00006) indica que este modelo explica tan solo el 0.006% de la variación en Ninos_trabajo.
+Adicionalmente, el $R^2$ (0,0001) indica que este modelo explica tan solo el 0.01% de la variación en Ninos_trabajo.
 
 La segunda regresión que se analizará tendrá en cuenta el efecto de la disminución de los ingresos durante los últimos 12 meses, el numero de personas en el hogar, el sexo, la edad que registraron en la encuesta y la asistencia del infante una institución de educación formal sobre la busqueda de trabajo por parte de los niños durante el último mes. La ecuación es la siguiente:
 
-$Y = \beta_0 + \beta_1I + \beta_2P + \beta_3J + \beta_3S + \beta\_4E + \beta\_5A + e $
+  $Y = \beta_0 + \beta_1I + \beta_2P + \beta_3J + \beta_3S + \beta\_4E + \beta\_5A + e $
 
 Donde las variables *Y, I y e* tienen el mismo significado que en la ecuacion anterior; P muestra el número de personas que viven en el hogar; J es una variable dicotómica que toma el valor de 1 cuando el niño tiene entre 5 y 17 años y vive con otros adultos y 0 cuando el adolescente tiene entre 12 y 17 años y es jefe del hogar; S es una variable dicotómica que toma el valor de 1 cuando el sexo es femenino y 0 cuando es masculino; E toma valores entre 5 y 17 y representa la edad que registraron los niños en el momento de la encuesta y finalmente, A es una variable dicotómica que toma el valor de 1 cuando el infante asiste a una institución de educación formal y 0 en el el caso contrario.
 
@@ -195,27 +194,27 @@ stargazer(modelo_2, title = "Tabla 2", type = "text", out = "modelo2.txt")
 
 Al igual que en el modelo anterior, no se analizara el valor del intercepto ya que no tiene ningun sentido interpretarlo. 
 
-El coeficiente de la variable Adult_disminucion_ing2 indica que en los hogares en los que no diminuyó el ingreso en los ultimos 12 meses tienen 0.00008148 menos probabilidad en comparación con los hogares en donde si disminuyo el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas, ceteris paribus.
+El coeficiente de la variable Adult_disminucion_ing2 indica que en los hogares en los que no diminuyó el ingreso en los ultimos 12 meses tienen 0.000232 menos probabilidad en comparación con los hogares en donde si disminuyo el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas, ceteris paribus.
 
-Además, el coeficiente de la variable Adult_disminucion_ing3 cambio de sentido, indicando que en los hogares que no tuvieron ingresos en los ultimos 12 meses tienen 0.001731 menos probabilidad en comparación con los hogares en donde si disminuyo el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas, controlando por todo lo demás.
+Además, el coeficiente de la variable Adult_disminucion_ing3 cambio de sentido, indicando que en los hogares que no tuvieron ingresos en los ultimos 12 meses tienen 0.0003831 menos probabilidad en comparación con los hogares en donde si disminuyo el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas, controlando por todo lo demás.
 
-El coeficiente de la variable Nino_personas_hogar es -0.0006791, este coeficiente indica que si el número de personas que viven en el hogar aumenta en una unidad, la probabilidad de que los niños buscaran trabajo en el último mes disminuiría en 0.0006791 unidades, dejando constante las demás variables.
+El coeficiente de la variable Nino_personas_hogar es -0.0005704, este coeficiente indica que si el número de personas que viven en el hogar aumenta en una unidad, la probabilidad de que los niños buscaran trabajo en el último mes disminuiría en 0.0005704 unidades, dejando constante las demás variables.
 
-El coeficiente de la variable Nino_sexo indica que, dejando todo lo demás constante, las mujeres tienen 0.002945 menos probabilidad que los hombres de haber buscado trabajo en las ultimas cuatro semanas.
+El coeficiente de la variable Nino_sexo indica que, dejando todo lo demás constante, las mujeres tienen 0.003295 menos probabilidad que los hombres de haber buscado trabajo en las ultimas cuatro semanas.
 
-El coeficiente de la variable Nino_edad es 0.003956, este coeficiente indica que ante un aumento de un año en la edad de los niños, la probabilidad de que los niños buscaran trabajo en el último mes aumentaría en 0.003956 unidades, ceteris paribus.
+El coeficiente de la variable Nino_educ es -0.0567861, este coeficiente indica que los niños que reciben una educacion formal tienen 0.0567861 menos pobabilidad con respecto a los que no asisten al colegio o a la universidad de haber buscado trabajo en el último mes, ceteris paribus.
 
-El coeficiente de la variable Nino_educ es -0.06502, indicando que los niños que asisten a una institución de educación formal tienen 0.06502 menos probabilidad en comparación con los que no asisten de haber buscado trabajo durante las últimas 4 semanas, manteniendo todo lo demás constante.
+El coeficiente de la variable Nino_edad es negativa para las edades 5, 6 y 7, pero es positiva para las edades de 8 a 17 años, indicando que los niños que tienen entre 5 y 7 años y asisten a una institución de educación formal tienen menos probabilidad en comparación con los que no asisten de haber buscado trabajo durante las últimas 4 semanas, manteniendo todo lo demás constante. Por su parte, los niños que tienen entre 8 y 17 años y asisten a una institución de educación formal tienen más probabilidad en comparación con los que no asisten de haber buscado trabajo durante las últimas 4 semanas, con todo lo demás constante.
 
-De acuerdo con el valor p, al igual que en el modelo anterior,ninguno de los coeficientes de la variable Adult_disminucion_ing son estadísticamente significativos, ya que los valores p son mayores al 0,1, en otras palabras, no se puede rechazar la hipótesis nula de que los coeficiente son iguales a 0, en favor de la hipótesis alternativa de que los coeficientes son diferente a 0.
+De acuerdo con el valor p, al igual que en el modelo anterior,ninguno de los coeficientes de la variable Adult_disminucion_ing son estadísticamente significativos, al igual que ninguno de los intervalos de edades, ya que los valores p son mayores al 0,1, en otras palabras, no se puede rechazar la hipótesis nula de que los coeficiente son iguales a 0, en favor de la hipótesis alternativa de que los coeficientes son diferente a 0.
 
-En contraste, los asteriscos al lado del valor p indican que los coeficientes del las variables de edad, educación, sexo y número de personas en el hogar son estadisticamente significativos. Las dos primeras variables  a un nivel de confianza del 99.9%, pues el valor p es menor a 0,001, el sexo y el numero de personas en el hogar a un nivel de confianza del 95% y del 90% respectivamente. 
+En contraste, los asteriscos al lado del valor p indican que los coeficientes del las variables de educación, sexo y número de personas en el hogar son estadisticamente significativos. La primera variable a un nivel de confianza del 99.9%, pues el valor p es menor a 0,001, el sexo y el numero de personas en el hogar a un nivel de confianza del 95% y del 90% respectivamente. 
 
-El $R^2$ (0.03749) aumentó como es natural cuando se agregan variables en una regresión. En este caso, es mas acertado enfocarnos en el $R^2$ Ajustado, el cual ajusta el valor del $R^2$ para quitar el efecto del aumento natural que se da simplemente por agregar más variables al modelo. En este caso el $R^2$ Ajustado aumentó de 0.00001093 a 0.03735, lo cual indica que con las 5 variables adicionales, este nuevo modelo explica el 3,735% de la variiacion en Ninos_trabajo.
+El $R^2$ (0.048) aumentó como es natural cuando se agregan variables en una regresión. En este caso, es mas acertado enfocarnos en el $R^2$ Ajustado, el cual ajusta el valor del $R^2$ para quitar el efecto del aumento natural que se da simplemente por agregar más variables al modelo. En este caso el $R^2$ Ajustado aumentó de 0,0001 a 0.048, lo cual indica que con las 4 variables adicionales, este nuevo modelo explica el 4.8% de la variación en Ninos_trabajo.
 
-Finalmente, se realizo una regresion incluyendo la interacción entre las variables *Nino_sexo* y *Nino_educ*, para evaluar en que proporción el efecto de ser mujer en *Y*, está mediado por la asistencia del niño a una institución de educación formal.
+Finalmente, se realizó una regresion incluyendo la interacción entre las variables *Nino_sexo* y *Nino_educ*, para evaluar en que proporción el efecto de ser mujer en *Y*, está mediado por la asistencia del niño a una institución de educación formal.
 
-$Y = \beta_0 + \beta_1I + \beta_2P + \beta_3S + \beta_4E + \beta_5A + \beta_5S*A + e$
+  $Y = \beta_0 + \beta_1I + \beta_2P + \beta_3S + \beta_4E + \beta_5A + \beta_5S*A + e$
 
 ```{r}
 modelo_3 <- lm(as.integer(Nino_trabajo) ~ Adult_disminucion_ing + Nino_personas_hogar  + Nino_sexo + Nino_edad + Nino_educ + Nino_sexo:Nino_educ, data = Base_completa)
@@ -227,51 +226,61 @@ stargazer(modelo_3, title = "Tabla 3", type = "text", out = "modelo3.txt")
 
 Al igual que en el modelo anterior, no se analizara el valor del intercepto ya que no tiene ningun sentido interpretarlo. 
 
-Los coeficientes de la variable Adult_disminucion_ing siguen sin ser significativos y con signo negativos, la probabilidad de afectar la variable dependiente vario en una proporcion mínima. 
+Los coeficientes de las variables Adult_disminucion_ing siguen y Nino_edad siguen sin ser significativos y con los mismos signos, excepto para la edad de 8 años, que ahora tiene signo negativo, la probabilidad de afectar la variable dependiente cambió en una proporcion mínima. 
 
-De igual forma, los coeficientes de la variable de sexo, número de personas en el hogar, edad y educacion de los niños varian muy poco y continuan teniendo el mismo nivel de significancia.
+De igual forma, los coeficientes de la variable de sexo, número de personas en el hogar, edad y educacion de los niños varian muy poco y continuan teniendo el mismo nivel de significancia y el mismo sentido.
 
-En este modelo es importante analizar el coeficiente $\beta_5$, que nos muestra la interacción entre el sexo y la asistencia de los niños a una institución de educación formal. De acuerdo con los resultados de esta regresión las mujeres tienen, en promedio, 0.02929 menos probabilidad que los hombres de haber buscdado trabajo en el último mes , y los niños que reciben una eduación formal tienen 0.07951 menos probabilidad que los que no asisten al colegio de haber buscado trabajo en las últimas 4 semanas. La interacción Nino_sexo:Nino_educ indica que para las mujeres en que asisten a una institución de educacion formal es 0.02779 más probable que para los hombres que asisten al colegio o la universidad haber buscado trabajo durante el último mes, además este coeficiente es estadísticamente significativo, con un nivel de confianza del 99.9%, pues el valor p es menor a 0,001. 
+En este modelo es importante analizar el coeficiente $\beta_5$, que nos muestra la interacción entre el sexo y la asistencia de los niños a una institución de educación formal. De acuerdo con los resultados de esta regresión las mujeres tienen, en promedio, 0.032727 menos probabilidad que los hombres de haber buscado trabajo en el último mes. La interacción Nino_sexo:Nino_educ indica que para las mujeres en que asisten a una institución de educacion formal es 0.031044 más probable que para los hombres que asisten al colegio o la universidad haber buscado trabajo durante el último mes, además este coeficiente es estadísticamente significativo, con un nivel de confianza del 99.9%, pues el valor p es menor a 0,001. 
 
-Nuevamente el $R^2$ (0.03749) 0.03824,	Adjusted R-squared:  0.03808  aumentó como es natural cuando se agregan variables en una regresión, pero este aumento fue tan solo de 0.00075 puntos. Como se habia mencionado anteriormente, es mas acertado enfocarnos en el $R^2$ Ajustado, que en este caso  aumentó de 0.00001093 a 0.03735 a  0.03808, lo cual indica que incluyendo la interaccion entre el sexo y la educacion de los niños, el nuevo modelo explica el 3,808% 3,735% de la variiacion en Ninos_trabajo, un 0.073% más en comparación con el modelo 2 y un 3.8% mas comparado con el primer modelo.
+Nuevamente el $R^2$ (0.048) se mantuvo constante. Como se habia mencionado anteriormente, es mas acertado enfocarnos en el $R^2$ Ajustado, que en este caso  aumentó de 0.00001093 a 0.048 a  0.04851, lo cual indica que incluyendo la interaccion entre el sexo y la educacion de los niños, el nuevo modelo explica el 4.85% de la variación en Ninos_trabajo, un 0.051% más en comparación con el modelo 2.
 
 ### Revicion de los principales supestos de los modelos estimados
 
 Los 5 supuestos claves de la regresión son:
 
-1. Normalidad.
-2. Independencia.
-3. Linealidad. 
-4. Homocedasticidad.
-5. Multicolinealidad.
+1. *Normalidad*: Como se puede evidenciar en las gráficas llamadas Normal_QQ Plot, en ambos modelos los residuos estan aproximadamente sobre la línea, excepto por los valores ajustados más altos por lo cual es posible concluir que existe un comportamiento asimetrico en de los residuos, es necesario realizar pruebas estadísticas de normalidad, transformaciones de las variables involucradas, o utilizar modelos más complejos que consideren la falta de normalidad (GLM).
 
+2. *Independencia*: A través de la prueba de Durbin_Watson se observó que para el primer modelo el valor del estadistico DW es 1.905978 y para el modelo 2 es 1.905629, es decir, que no existen problemas de autocorrelaión para ningún modelo.
 
+3. *Linealidad*: La linealidad se evalúa en la gráfica de residuos versus valores ajustados (fitted). En esta gráfica no debería identificarse una comportamiento sistemático que sugiera que los residuos varían según los valores ajustados. En ambos casos, ese supuesto no pareciera cumplirse, teniendo en cuenta que hay un comportamiento sistemático esto sugiere que la relación no es líneal y que debe emplearse algún polinomio en el modelo, o que hay alguna variable omitida en el modelo.
 
-Un método inicial para revisar estos supuesto es realizar un conjunto de gráficos que permite evaluarlos. Para esto se aplica la función `ggdiagnose` (del paquete lindia) al modelo estimado:
+4. *Homocedasticidad*: La homocedasticidad se evalúa en el gráfico Scale Location. Allí no se debería observar ningún comportamiento sistemático en la raíz cuadrada de los residuos estandarizados para los diferentes valores ajustados. En ambos casos, este supuesto parece cumplirse excepto para los valores ajustados bajos. 
+
+5. *Multicolinealidad*: La multicolinealidad se puede evaluar calculando el factor de inflación de la varianza, si la raíz cuadrada del factor de inflación de la varianza es mayor a 2, esto sugiere que hay un problema de multicolinealidad. Para el caso del modelo 1 no es necesario aplicar esta prueba, ya que es un modelo de regresion lineal simple. En el modelo 2  se puede evidenciar que la raiz cuadrada del factor de inflación de la varianza siempre es menor a 2, por lo tanto no hay multicolinealidad.
+
+-   Modelo 1
 
 ```{r}
 gg_diagnose(modelo_1)
 ```
 
 ```{r}
+durbinWatsonTest(modelo_1)
+```
+
+-   Modelo 2
+
+```{r}
 gg_diagnose(modelo_2)
 ```
 
 ```{r}
-gg_diagnose(modelo_3)
+durbinWatsonTest(modelo_2)
+```
+
+
+```{r}
+vif(modelo_2)
+sqrt(vif(modelo_2))
 ```
 
 ## Resumen de los resultados
 
-Para lograr visualizar de manera mas clara las diferencias entre los tres modelos que se analizaron, se realizo la Grafica 1, donde se muestran los cambios en los coeficientes para cada ecuación estimada.
+Para lograr visualizar de manera mas clara las diferencias entre los tres modelos que se analizaron, se realizo la Tabla 4, donde se muestran los cambios en los coeficientes para cada ecuación estimada.
 
-```{r}
-modelos<- list("Modelo 1" = modelo_1, "Modelo 2" = modelo_2, "Modelo 3" = modelo_3)
-modelplot(modelos)
-```
 ```{r}
 stargazer(modelo_1, modelo_2, modelo_3, title = "Tabla 4", type = "text", out = "modelos.txt")
 ```
 De los resultados obtenidos en las regresiones anteriormente realizadas podemos concluir principalmente que el modelo explica en muy baja proporción la variabilidad de los datos, ya que el modelo explica tan solo el 3% la variación de nuestra variable dependiente que es si los niños buscaron trabajo en las 4 semanas anteriores a la encuesta o no. Lo que nos muestra que la intuición que se tuvo en la elección de las variables independientes que son factores socio-económicos, para la creación del modelo no fue la más acertada, pues realmente no nos permite identificar con certeza las causales del trabajo en niños de 5 a 17 años en Colombia para el 2011.
 
-Con la gráfica anterior y la Tabla 4 podemos ver que la diferencia entre los valores de los coeficientes obtenidos en los 3 modelos estimados no es muy grande, incluso el modelo 1 que solo utiliza la variable dependiente y la independiente principal se asemeja mucho en el intercepto y en dichas variables a los resultados obtenidos en modelo 2 y 3 para estas mismas variables. La mayor diferencia que se da es en la variable que representa el sexo de los niños encuestados en los modelos 2 y 3, también se evidencia una diferencia en la variable de educación de los niños encuestados igualmente en los modelos 2 y 3.
+Con la Tabla 4 podemos ver que la diferencia entre los valores de los coeficientes obtenidos en los 3 modelos estimados no es muy grande, incluso el modelo 1 que solo utiliza la variable dependiente y la independiente principal se asemeja mucho en el intercepto y en dichas variables a los resultados obtenidos en modelo 2 y 3 para estas mismas variables. La mayor diferencia que se da es en la variable que representa el sexo de los niños encuestados en los modelos 2 y 3, también se evidencia una diferencia en la variable de educación de los niños encuestados igualmente en los modelos 2 y 3.
