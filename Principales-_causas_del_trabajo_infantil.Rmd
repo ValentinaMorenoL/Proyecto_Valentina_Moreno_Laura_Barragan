@@ -1,0 +1,416 @@
+---
+title: "Pricipales causas del trabajo infantil"
+author: "Valentina Moreno y Laura Barragan"
+date: "1 de Junio de 2021"
+output:
+  word_document: default
+  html_notebook: default
+csl: apa.csl.txt
+bibliography: Bibliografia.bib
+---
+
+## Introducción
+
+A lo largo de los años el trabajo ha sido considerado como una actividad fundamental para la subsistencia de la humanidad, pues esta labor facilita el acceso a los recursos para satisfacer las necesidades básicas del hombre como por ejemplo la comida, la vivienda, la salud siendo estos los más mínimos y también el acceso a bienes de lujo o que ayudan a mejorar la calidad de vida. El decidir quién debería trabajar es una construcción social, pues muchas culturas indican que el hombre debe hacerse cargo de los gastos del hogar y la mujer responder por las labores del hogar, esto es algo que actualmente muy poco se aplica pues tanto hombres como mujeres desempeñan ambos roles en la sociedad. Sin embargo, no solo los adultos se dedican a trabajar pues según la Unicef 151,6 millones de niñas y niños de entre 5 y 17 años (1 de cada 10 niños del mundo) trabajan, en todo el mundo. Esta es una situación alarmante porque
+
+"El trabajo infantil priva a los niños y niñas de su derecho a la educación y el juego, los expone a abusos y violencia, refuerza ciclos de pobreza y profundiza la inequidad social... Son labores que exigen muchas horas de dedicación, para las que son demasiado jóvenes, que ponen en riesgo su salud y bienestar, que les roban tiempo de juego y que les apartan de la educación." (UNICEF, 2021)
+
+En colombia según el informe trimestral octubre--diciembre 2020 del DANE en ese año se encontró que 523 niños entre los 5 y 17 años pertenecian a la población trabajadora en Colombia, esta cifra es preocupante e implicitamente genera la inquietud de entender el porque los niños en Colombia estan en la obligación de trabajar o buscar trabajo, es acaso consecuencia de la pobreza de los hogares, de la explotación infantil, o de cuestiones más sencillas y cotidianas como el cambio en el ingreso de las familias, el hecho de que sean hombres o mujeres, si tienen la oportunidad de asistir a la escuela, eso precisamente es lo que se busca en este documento, entender cual de estos factores sociales y economicos conllevan al trabajo infantil.
+
+Se han encontrado diferentes artículos y documentos de investigaciones previas que brindan una guía y un mejor entendimiento del problema en cuestión. En general, los estudios acerca del trabajo infantil se enfocan principalmente en analizar las causas que llevan a que un niño trabaje o analizar el impacto del trabajo infantil en factores como la educación. En este trabajo pretendemos analizar en qué medida los diferentes factores socioeconómicos, como el nivel de ingresos y la educación influyeron en que niños entre los 5 y 17 años trabajaran en Bogotá durante el año 2011.
+
+En este sentido [@mendoza2012factores] tiene un enfoque muy similar al nuestro en dos factores principales, el primero es el propósito de la investigación, pues su objetivo es descubrir como los factores socioeconómicos influyen en el trabajo infantil en el año 2008 en una región específica en Colombia. En segunda instancia, la muestra utilizada allí estuvo constituida por 835 niños, niñas y adolescentes entre 6 y 17 años, que son edades afines a las que se utilizarán en este caso de estudio. Sin embargo, en ese trabajo la población utilizada fue la que participo en el proyecto "Edúcame primero, Colombia". Finalmente, la autora identificó que el 40.1% (335 casos) de la muestra estudiada era víctima de la explotación laboral infantil y un 59.8 % (500 casos) se encontró en riesgo.
+
+Análogamente, [@vargas2002trabajo] en la Universidad de Antioquia realizó una encuesta para conocer las condiciones socioeconómicas de una muestra aleatoria proporcional al sexo con 250 niños y adolescentes, donde se encontró que, de la muestra estudiada, el 82,8 % correspondió a varones; la edad promedio del grupo masculino fue de 14 años y para las mujeres fue de 12. Además, 46,4% del total de la muestra no estudia en la actualidad y los que lo hacen (53,6 %), tienen niveles educativos bajos para la edad. Cabe resaltar que el 100 % de los trabajadores infantiles perteneció a estratos pobres de la ciudad y el 45,4 % contribuían directa o indirectamente a los gastos del hogar.
+
+Por otra parte, uno de los factores socioeconómicos mas estudiados por su relación con el trabajo infantil es la pobreza, al respecto [@vota2019analisis] con datos de 2019 tomados del Módulo de Trabajo Infantil, que abarca las características de las actividades económicas, domésticas y escolares que realizan los niños, las niñas y los adolescentes de 5 a 17 años de México, a través de técnicas de análisis de las declaraciones de la población de estudio que reflejaban sus percepciones y actitudes en torno al tema de investigación, la investigadora pudo determinar que efectivamente un factor como la pobreza que a su vez es causado por otros factores socioeconómicos, lleva a que los infantes trabajen de manera informal, con un pago bien sea en dinero o en especie, y confirma que la edad mínima para el trabajo infantil generalmente es de 5 años, además, que los niños comienzan su actividad laboral en promedio a los 8 años.
+
+Otros estudios como [@paz2011trabajo] también analizan la relación entre el trabajo infantil y la pobreza; en este documento, los autores analizan el modelo de Basu y Van (1998), que plantea a nivel teórico la llamada hipótesis de lujo según la cual los hogares están comandados por padres altruistas y pobres que recurren al trabajo infantil como estrategia de escape de la pobreza. Con datos de la Encuesta de Actividades de Niños, Niñas y Adolescentes realizada en Argentina en 2004, se exploró empíricamente la hipótesis de padres altruistas examinando en qué medida la pobreza monetaria y las privaciones materiales pueden considerarse determinantes de la participación económica de niñas, niños y adolescentes. Finalmente se llegó a la conclusión de que, a pesar de la relación que a nivel descriptivo puede hallarse, ni la pobreza monetaria ni las privaciones materiales, son determinantes cruciales y de peso en la decisión de los hogares de hacer trabajar a los niños.
+
+Por último, revisamos un estudio que examina la relación existente entre la educación y el trabajo infantil, principalmente en áreas rurales [@guzman2015impacto]. En este caso, la motivación de los investigadores fue la noción de que la necesidad de vinculación de los adolescentes en la cadena productiva familiar de las comunidades rurales en el escenario colombiano ocasionaba deserción y desestimulo en los estudiantes para terminar los ciclos de formación de los programas que el Ministerio de Educación tiene establecidos para los ciudadanos. Por ende, el objetivo de su investigación fue evidenciar la repercusión negativa del trabajo infantil en el desempeño académico de adolescentes que intervienen en la cadena productiva familiar en una comunidad rural, y señalar la percepción del estudiante frente al valor agregado de la educación.
+
+Para ello, los autores hicieron el seguimiento a una muestra de estudiantes de un centro educativo rural en donde los adolescentes intervienen en la economía del hogar, bajo un diseño metodológico participativo que incluyó el análisis de los resultados académicos en varios períodos escolares. Los resultados de las comparaciones evidenciaron un bajo rendimiento constante de algunos estudiantes que se dedican al trabajo infantil, quienes se convirtieron en la muestra de estudio, además, a los padres o tutores de los estudiantes se les aplicó una encuesta para de conocer el concepto que tenían los encuestados sobre la importancia de la educación de sus hijos. Los resultados de los estudiantes mostraron desánimo y pereza por parte de algunos de los alumnos encuestados, hecho que se complica porque en la mayoría de las familias, no existe una disciplina que conduzca a formular un proyecto de vida y que genere expectativas a futuro para así ver en la educación una posibilidad para salir de la vulnerabilidad y tener nuevas opciones a partir del conocimiento. En cuanto a los padres, efectivamente reconocen que la mano de obra de sus hijos es una necesidad para el apoyo de la economía familiar.
+
+## Descripción de la base de datos y las variables
+
+La base de datos escogida es la encuesta nacional de trabajo infantil del año 2011, esta se divide a su vez en dos secciones la primera se llama Enti_niños y cuenta con 339 variables y 48898 observaciones, la segunda sección se llama Enti_adultos y cuenta con 409 variables y 48959 observaciones. Elegimos trabajar con ambas secciones ya que para nuestro caso de estudio necesitamos variables de las dos. Trabajan con 25 departamentos, incluyendo a Bogotá como uno. Se estudio la posibilidad de realizar la investigacion con información obtenida de la base de datos GEIH, sin embargo, nos pudimos dar cuenta que esta no es pertinente para resolver nuestra pregunta de investigación, porque la población estudiada no se adapta a el rango de edad de nuestro interés, y la GEIH del trabajo infantil se centra en caracterizar el trabajo infantil y no nos brinda información de otros factores socioeconómicos como la educación ni el nivel de ingreso.
+
+En cuanto a la identificación de las variables relevantes de las bases de datos elegidas, se tendrán en cuenta las siguientes:
+
++------------------------------------------+----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Nombre de variable**                   | **Tipo de Variable** | **Siglas**            | **Descipción**                                                                                                                                                                                      |
++==========================================+======================+=======================+=====================================================================================================================================================================================================+
+| Trabajo infantil                         | Dependiente          | Nino_trabajo          | Variable binaria, toma el valor de 1 si los niños entre 5 y 17 años en las últimas cuatro semanas hicieron alguna diligencia para conseguir trabajo o instalar un negocio y 0 en el caso contrario. |
++------------------------------------------+----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Disminución de ingresos en el último año | Independiente        | Adult_disminucion_ing | Variable categorica que toma el valor de 1 si hubo una disminución de los ingresos del hogar en los últimos doce meses y 2 si no.                                                                   |
++------------------------------------------+----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Sexo                                     | Control              | Nino_sexo             | Variable binaria 1 si es mujer, 0 si es hombre.                                                                                                                                                     |
++------------------------------------------+----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Edad                                     | Control              | Nino_edad             | Edad que registraron en la GEIH en el año 2011.                                                                                                                                                     |
++------------------------------------------+----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Total de personas en el hogar            | Control              | Nino_personas_hogar   | Número de personas que viven en el hogar.                                                                                                                                                           |
++------------------------------------------+----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Educación                                | Control              | Nino_educ             | Variable binaria que toma el valor de 1 si el niño asiste actualmente a la escuela, colegio o universidad, recibiendo clases de educación formal y 0 en el caso contrario.                          |
++------------------------------------------+----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+## Descripción de los modelos estimados
+
+La hipótesis principal de este estudio es que los factores socioeconómicos como la pobreza, la falta de educación y el abandono, tienen una fuerte influencia en el rumbo de la vida de los infantes. El trabajo infantil es una práctica común en Colombia y es necesario dejar de normalizarla; a diario vemos ejemplos en las calles, niños que buscan el sustento económico trabajando de manera informal, para suplir sus necesidades si están en condición de abandono o ser una fuente de ingreso para su familia. La principal causa del trabajo infantil es la pobreza, pues es en esta situación que todos los integrantes de una familia deben aportar dinero para poder sobrevivir; sin embargo, otros factores también deben tenerse en cuenta, tales como la falta de educación, pues los niños y adolescentes que no tengan acceso a ella generalmente optan por trabajar para su oficio; por último, es relevante tener en cuenta factores como la edad, el sexo y la cantidad de personas que viven en el hogar, ya que la necesidad de ingresos cuando este número de personas sea elevado debera ser mayor.
+
+El objetivo central del siguiente documento es determinar en qué medida los diferentes factores socioeconómicos influyen en el trabajo infantil de los niños entre los 5 y 17 de edad en Bogotá durante el año 2011, para ello se realizará una descripción estadística de las variables y posteriormente se llevarán a cabo regresines lineales, utilizando como variable dependiente a los niños entre 5 y 17 años de edad que en las últimas cuatro semanas hicieron alguna diligencia para conseguir un trabajo o instalar un negocio, la variable explicativa principal es la disminución de ingresos en el último año como aproximación a la variación del nivel de ingresos del hogar; además, se agregaron 4 variables de control, el sexo, la edad, el número de personas en el hogar y la educación de los niños para evitar un sesgo por variable omitida.
+
+```{r,  echo=FALSE, warning=FALSE, ,message=FALSE}
+library(tidyverse)
+library(haven)
+library(knitr)
+library(naniar)
+library(stargazer)
+library(GGally)
+library(lindia)
+library(ggeffects)
+library(modelsummary)
+library(broom)
+library(car)
+library(sandwich)
+library(flextable)
+```
+
+-   **Cargar las bases de datos**
+
+```{r}
+rm(list = ls())
+load("Basecompleta.RData")
+```
+
+En primer lugar se realizó una visualización de los datos faltantes de la base de datos que se iba a utilizar y se encontró que para la variable llamada *Nino_trabajo*, que representa la búsqueda de trabajo o la intención de instalar un negocio por parte de los niños en las últimas 4 semanas, en principio tenía dos categorías de respuesta, 1 para sí y 2 para no; esta variable tenía un porcentaje de 10,61% de datos faltantes, sin embargo, luego del análisis realizado, decidimos reemplazar esos valores faltantes por una tercera categoría de respuesta representada por el número 3, esta nueva categoría de respuesta representará aquellos niños, niñas y adolescentes no buscaron trabajo durante el último mes dado que ya se encontraban trabajando.
+
+Por otro lado, en cuanto a la variable *Nino_educ*, que debe entenderse como la asistencia de los niños entre 5 y 17 años a una institución de educación formal, en la muestra tenía un porcentaje de datos faltantes mínimo (2,26%); teniendo en cuenta que la base de datos total tiene un porcentaje de valores faltantes de tan solo el 1,2%, se decidió eliminar esas observaciones sin respuesta representadas por las letras *NA* de la base de datos completa, para eliminar esas observaciones ausentes de todas las variables, teniendo en cuenta que el porcentaje de datos que quedaba disponible para realizar los análisis era del 98,8%.
+
+```{r,  echo = FALSE}
+faltantes_antes <- vis_miss(Base_completa)
+faltantes_antes
+
+Base_completa <- replace_na(data = Base_completa, replace = list(Nino_trabajo = 3))
+unique(Base_completa$Nino_trabajo)
+
+## Convertimos la variable dependiente a factor, ya que solamente la habiamos definido como una variable numérica para poder realizar el manejo de los datos faltantes
+
+Base_completa <- Base_completa %>% 
+  mutate(Nino_trabajo = as.factor(Nino_trabajo))
+
+class(Base_completa$Nino_trabajo)
+
+Base_completa <- na.omit(Base_completa)
+
+faltantes_final <- vis_miss(Base_completa)
+faltantes_final
+```
+
+En cuanto a las estadisticas descriptivas, es primordial analizar el comportamiento de la variable dependiente, que corresponde a la busqueda de trabajo durante las últimas 4 semanas por parte del niño; según la Gráfica 1, pudimos evidenciar que la mayoria de los niños no han realizado ninguna diligencia para encontrar trabajo o instalar un negocio durante el último mes.
+
+```{r}
+Variable_depen <- Base_completa %>% count(Nino_trabajo)%>%
+  mutate(prop = n/sum(n)*100)
+
+ggplot(Variable_depen, aes(Nino_trabajo, prop)) +
+  geom_bar(stat = "identity", fill = "lightpink", color = c ("lightpink")) + 
+  labs(x= "Búsqueda de trabajo", y= "% Porcentaje", title = "Gráfica 1. Búsqueda de trabajo por parte de los niños", subtitle = " Durante las 4 semanas anteriores a ser encuestados") + 
+   theme_minimal()
+```
+
+La variable independiente de mayor interés para esta investigación es el nivel de ingresos de los hogares, utilizando la variable *Adult_disminucion_ing* pudimos identificar si existio una disminución de los ingresos del hogar en los últimos doce meses, en la Gráfica 2 resultó evidente que alrededor del 30% de los hogares encuestados presentaron una disminución en sus ingresos y alrededor del 70% no tuvieron ninguna afectación de sus ingresos durante el último año.
+
+```{r}
+Variable_indep <- Base_completa %>% count(Adult_disminucion_ing)%>%
+  mutate(prop1 = n/sum(n)*100)
+
+ggplot(Variable_indep, aes(Adult_disminucion_ing, prop1)) +
+  geom_bar(stat = "identity", fill = "lightblue1", color =  ("lightblue1")) + 
+  labs(x= "Categorías de disminución de los ingresos ", y= "% Porcentaje", title = "Gráfica 2. Comportamiento del ingreso del hogar  ", subtitle = " en los últimos 12 meses") + 
+   theme_minimal()
+```
+
+Por otra parte, la relación entre la disminución de ingresos en el hogar y la búsqueda de trabajo por parte de los niños representada en la Gráfica 3 muestra que para toda la muestra de hogares, independientemente de si se dió o no una disminución de ingresos durante los ultimos 12 meses, la gran mayoria de los niños, niñas y adolescentes encuestados no realizaron ninguna diligencia para buscar trabajo o instalar un negocio durante el último mes.
+
+```{r}
+ggplot(data = Base_completa, 
+       mapping = aes(x = Adult_disminucion_ing ,
+                     fill = Nino_trabajo )) +
+  geom_bar()+
+  labs(x = "Categorias de disminución de ingresos en el hogar", title = "Gráfica 3.Relación entre la disminución de ingresos en el hogar", subtitle = "y el trabajo infantil durante el último mes")
+```
+
+Acerca de la relación de la variable dependiente con la edad de los niños, a partir de la Gráfica 4 es posible conluir que la categoría dos, donde se encuentran los niños que no buscaron trabajo durante el último mes, presentan una gran variabilidad desde los 5 años hasta los 17, que es el periodo que se tiene en cuenta en la encuesta; por el contrario, en la primera categoría, es decir, los niños que si buscaron trabajo en las últimas 4 semanas, la frecuencia es prácticamente nula durante los primeros años de vida del infante, salvo por su etapa de adolescencia, pues se observa una pequeña variablidad para las edades entre los 13 y los 17 años. Además, en la tercera categoría que representa a los niños que ya se encuentran trabajando, presenta una variablidad creciente a partir de los 8 años aproximadamente.
+
+```{r}
+ggplot(data = Base_completa, mapping = aes(x = Nino_edad )) + 
+  geom_freqpoly() + 
+  facet_wrap(vars(Nino_trabajo))+
+  labs(x= "Edad de los niños", y= "Frecuencia", title = "Gráfica 4. Relación entre la edad de los niños", subtitle="y la busqueda de trabajo")
+```
+
+La relación entre la búsqueda de trabajo de los niños y el número de personas en su hogar (Gráfica 5) nos muestra que los niños que realizaron alguna diligencia para buscar trabajo o instalar un negocio en las últimas 4 semanas presentan una leve variación en cuanto al número de personas con las que viven desde los 5 años hasta los 17. En contraste, la variación de los niños que por el contrario no buscaron trabajo en el último mes es muy alta durante todo el periodo de análisis respecto al número de personas con las que viven, principalmente, cuando la cantidad de personas en el hogar se encuentra entre un rango aproximado de 2 a 10. Del mismo modo sucede en la categoría 3, aunque la variación es más moderada.
+
+```{r}
+ggplot(data = Base_completa, mapping = aes(x = Nino_personas_hogar)) + 
+  geom_freqpoly(color= "orchid1") + 
+  facet_wrap(vars(Nino_trabajo))+
+  xlim(0,25)+
+  labs(x= "Número de personas en el hogar", y= "Frecuencia", title = "Gráfica 5. Relación entre el número de personas", subtitle = " en el hogar y la búsqueda de trabajo de los niños")
+```
+
+La relación entre la asistencia de los niños a una institución de educación formal y la búsqueda de trabajo durante las 4 semanas anteriores a la encuesta, representada en la Gráfica 6 nos muestra que para toda la muestra, independientemente de si el infante asiste o no a una institución de educación formal, los niños entre 5 y 17 años no realizaron ninguna diligencia para buscar trabajo durante el último mes.
+
+```{r}
+ggplot(data = Base_completa, 
+       mapping = aes(x = Nino_educ ,
+                     fill = Nino_trabajo)) +
+  geom_bar()+
+  labs(x = "Asistencia de los niños a una institución de educación formal", title = "Gáfica 6. Relación entre la educación", subtitle = "y la búsqueda de trabajo durante el último mes")
+```
+Por ultimo, a partir de la Grafica 7 que muestra la relación entre el sexo y la distribución del tiempo de los niños es posible deducir que tanto los hombres como las mujeres no han realizado ninguna diligencia para buscar trabajo o instalar un negocio.Sin embargo, se evidencia una mayor proporción de hombres que pertenecen a la tercera categoria, es decir, que para la muestra de estudio, hay mas niños que ya se encuentran trabajando.
+
+```{r}
+ggplot(data = Base_completa, 
+       mapping = aes(x = Nino_sexo,
+                     fill = Nino_trabajo)) +
+  geom_bar()+
+   labs(x = "Sexo de los niños", title = "Gráfica 7.Relación entre el sexo y la búsqueda de trabajo de los niños")
+```
+
+Por otra parte, el coeficiente de correlación entre las unicas variables de control numéricas, que son la edad de los niños y el numero de personas en el hogar fue de -2,81, lo cual demuestra una relacion inversa entre estas variables, es decir, a medida que la edad del niño aumenta, el número de personas con las que vive en su hogar tiende a disminuir. Además, es importante tener en cuenta que de la muestra analizada, la media de las edades esta alrededor de los 11 años y con respecto al número de personas en el hogar, la media esta alrededor de 5 y el valor máximo es de 99, lo cual es un dato atipico.
+
+Posterior al análisis de las estadísticas descriptivas de las variables de interes, es pertinente definir el modelo que se va a implementar para el desarrollo del trabajo. Con el fin de responder la pregunta de investigación se estimaron 3 regresiones para evaluar cual de ellas describía mejor la relación entre los factores socioeconómicos y la búsqueda de trabajo por parte de los niños entre los 5 y 17 años en Bogotá durante el año 2011.
+
+Así, la primera regresión que se analizará tendrá en cuenta únicamente el efecto de la disminución de los ingresos en el hogar durante los últimos 12 meses sobre los niños que durante el último mes intentaron conseguir trabajo o instalar un negocio. La ecuación a estimar es la siguiente:
+
+$Y = \beta_0 + \beta_1I + e$
+
+Donde Y representa la variable dependiente que viene dada por la búsqueda de trabajo de los niños en las últimas 4 semanas, I es la variable independiente principal que muestra la disminución de los ingresos en el hogar durante el último año y e es el término del error.
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
+modelo_1 <- lm(as.integer(Nino_trabajo) ~ Adult_disminucion_ing, data = Base_completa)
+
+stargazer(modelo_1, type="text", title= "Tabla 1", dep.var.labels="Trabajo infantil", covariate.labels=c("Disminución ingresos", "Intercepto"))
+```
+
+Con la información de la Tabla 1 podemos inferir que, en este caso el valor de $\beta_0$ es la probabilidad de que un niño o niña trabaje en el caso de los hogares en los que no disminuyó el ingreso durante los ultimos 12 meses.
+
+El coeficiente de la variable *Disminución de ingresos* indica que en los hogares en los que disminuyó el ingreso en los últimos 12 meses tienen 0,032 más probabilidad en comparación con los hogares en donde no disminuyo el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas.
+
+Además, podemos evidenciar que tanto el coeficiente de la variable *Disminución de ingresos categoría 1* como el *intercepto* son estadísticamente significativos, esto con un nivel de confianza del 99.9% pues el valor p es menor a 0,01 como lo indican los tres asteriscos. Que sean estadísticamente significativos indica que se puede rechazar la hipótesis nula de que los coeficientes son iguales a 0, en favor de la hipótesis alternativa de que los coeficientes son diferente a 0.
+
+Adicionalmente, el $\R^2$ ajustado (0,002) indica que este modelo explica tan solo el 0.2% de la variación en Ninos_trabajo.
+
+La segunda regresión que se analizará tendrá en cuenta el efecto de la disminución de los ingresos durante los últimos 12 meses, el número de personas en el hogar, el sexo, la edad que registraron en la encuesta y la asistencia del infante una institución de educación formal sobre la búsqueda de trabajo por parte de los niños durante el último mes. La ecuación es la siguiente:
+
+$Y = \beta_0 + \beta_1I + \beta_2P + \beta_3S + \beta\_4E + \beta\_5A + e$
+
+Donde las variables Y, I y e tienen el mismo significado que en la ecuación anterior; P muestra el número de personas que viven en el hogar; S es una variable dicotómica que toma el valor de 1 cuando el sexo es femenino y 0 cuando es masculino; E toma valores entre 5 y 17 y representa la edad que registraron los niños en el momento de la encuesta y finalmente, A es una variable dicotómica que toma el valor de 1 cuando el infante asiste a una institución de educación formal y 0 en el el caso contrario.
+
+```{r, message=FALSE, warning=FALSE}
+modelo_2 <- lm(as.integer(Nino_trabajo) ~ Adult_disminucion_ing + Nino_personas_hogar + Nino_sexo + Nino_edad + Nino_educ, data = Base_completa)
+
+stargazer(modelo_1, modelo_2, type="text", title="Tabla 2", dep.var.labels="Trabajo infantil", covariate.labels=c("Disminución ingresos", "Número de personas en el hogar", "Sexo", "Edad", "Educación", "Constante"))
+```
+
+A diferencia del modelo anterior, no se analizará el valor del intercepto ya que no tiene ningún sentido interpretarlo, teniendo en cuenta que tanto la variable dependiente como la variable explicativa son categóricas, por lo tanto, esta constante no se tiene en cuenta.
+
+A partir de la Tabla 2, podemos ver que el coeficiente de la variable *Disminución de ingresos* es menor que en el modelo 1, esto se puede explicar debido a la inclusión de más variables que pueden explicar la variable dependiente. El valor de este coeficiente indica que en los hogares en los que disminuyó el ingreso en los últimos 12 meses tienen 0.026 más probabilidad en comparación con los hogares en donde no disminuyó el ingreso en ese periodo de tiempo, de que los niños buscaran trabajo durante las últimas 4 semanas, ceteris paribus.
+
+El coeficiente de la variable *Número de personas en el hogar* es 0.002, este coeficiente indica que, si el número de personas que viven en el hogar aumenta en una unidad, la probabilidad de que los niños buscaran trabajo en el último mes aumentaría en 0.002 unidades, dejando constante las demás variables.
+
+El coeficiente de la variable *Sexo* indica que, dejando todo lo demás constante, las mujeres tienen 0.05 menos probabilidad que los hombres de haber buscado trabajo en las últimas cuatro semanas.
+
+El coeficiente de la variable *Edad* es positiva, indicando que, si la edad de los niños aumenta en una unidad, la probabilidad de que los buscaran trabajo en el último mes aumentaría en 0.018 unidades, dejando constante las demás variables.
+
+El coeficiente de la variable *Educación* es -0.157, este coeficiente indica que los niños que reciben una educación formal tienen 0.157 menos pobabilidad con respecto a los que no asisten al colegio o a la universidad de haber buscado trabajo en el último mes, ceteris paribus.
+
+De acuerdo con el valor p, al igual que en el modelo anterior, ninguno de los coeficientes de la variable Adult_disminucion_ing son estadísticamente significativos, al igual que ninguno de los intervalos de edades, ya que los valores p son mayores al 0,1, en otras palabras, no se puede rechazar la hipótesis nula de que los coeficientes son iguales a 0, en favor de la hipótesis alternativa de que los coeficientes son diferentes a 0.
+
+Además, los asteriscos al lado del valor p indican que los coeficientes de las variables de disminución de ingresos, educación, sexo, edad y número de personas en el hogar son estadísticamente significativos, todas con un nivel de confianza del 99.9%, pues el valor p es menor a 0,01.
+
+El $R^2$ (0.079) aumentó como es natural cuando se agregan variables en una regresión. En este caso, es más acertado enfocarnos en el $R^2$ Ajustado, el cual ajusta el valor del $R^2$ para quitar el efecto del aumento natural que se da simplemente por agregar más variables al modelo. En este caso el $R^2$ Ajustado aumentó de 0,02 a 0.079, lo cual indica que, con las 4 variables adicionales, este nuevo modelo explica el 7.9% de la variación en Ninos_trabajo.
+
+Finalmente, se realizó una regresión incluyendo la interacción entre las variables *Nino_sexo* y *Nino_educ*, para evaluar en que proporción el efecto de ser mujer en *Y*, está mediado por la asistencia del niño a una institución de educación formal.
+
+$Y = \beta_0 + \beta_1I + \beta_2P + \beta_3S + \beta_4E + \beta_5A + \beta_6S*A + e$
+
+```{r, message=FALSE, warning=FALSE}
+modelo_3 <- lm(as.integer(Nino_trabajo) ~ Adult_disminucion_ing + Nino_personas_hogar  + Nino_sexo + Nino_edad + Nino_educ + Nino_sexo:Nino_educ, data = Base_completa)
+
+stargazer(modelo_1, modelo_2, modelo_3, type="text", title = "Tabla 3", dep.var.labels="Trabajo infantil", covariate.labels=c("Disminución ingresos", "Número de personas en el hogar", "Sexo", "Edad", "Educación", "Sexo*Educación", "Constante"))
+```
+
+Al igual que en el modelo anterior, a pesar de que el valor del intercepto se incrementó, este coeficiente no se analizará ya que no tiene ningún sentido interpretarlo.
+
+Los coeficientes de las variables *Disminucion ingresos*, *Número de personas en el hogar* y *Edad* no varian con respecto al Modelo 2 y siguen siendo estadísticamente significativos.
+
+Por otra parte, los coeficientes de las variables *Sexo* y *Educación* disminuyeron 0.168 y 0.079 respectivamente en comparación con el Modelo 2 y también son estadísticamente significativos.
+
+En este modelo es importante analizar el coeficiente $\beta_6$, que nos muestra la interacción entre el sexo y la asistencia de los niños a una institución de educación formal. De acuerdo con los resultados de esta regresión las mujeres que asisten a una institución de educación formal tienen en promedio 0.182 más probabilidad que los hombres que asisten al colegio o la universidad de haber buscado trabajo durante el último mes, además este coeficiente es estadísticamente significativo, con un nivel de confianza del 99.9%, pues el valor p es menor a 0,01.
+
+Nuevamente el $\R^2$ (0.085) aumentó. Como se habia mencionado anteriormente, es mas acertado enfocarnos en el $\R^2$ Ajustado, que en este caso aumentó de 0.079 a 0.085, lo cual indica que incluyendo la interaccion entre el sexo y la educacion de los niños, el nuevo modelo explica el 8.5% de la variación en Ninos_trabajo, un 0.6% más en comparación con el Modelo 2.
+
+### Revisión de los principales supuestos de los modelos estimados
+
+Los 5 supuestos claves de la regresión son:
+
+-   *Normalidad*: Como se puede evidenciar en las gráficas llamadas Normal_QQ Plot, en ambos modelos los residuos no están aproximadamente sobre la línea, excepto por los valores ajustados intermedios, por lo cual es posible concluir que existe un comportamiento asimétrico en de los residuos, es necesario realizar pruebas estadísticas de normalidad, transformaciones de las variables involucradas, o utilizar modelos más complejos que consideren la falta de normalidad (GLM).
+
+-   *Independencia*: A través de la prueba de Durbin_Watson se observó que para el primer modelo el valor del estadístico DW es 1.702031 y para el modelo 2 es 1.697173, es decir, que no existen problemas de autocorrelación para ningún modelo.
+
+-   *Linealidad*: La linealidad se evalúa en la gráfica de residuos versus valores ajustados (fitted). En esta gráfica no debería identificarse un comportamiento sistemático que sugiera que los residuos varían según los valores ajustados. En ambos casos, ese supuesto no pareciera cumplirse, teniendo en cuenta que hay un comportamiento sistemático esto sugiere que la relación no es lineal y que debe emplearse algún polinomio en el modelo, o que hay alguna variable omitida en el modelo.
+
+-   *Homocedasticidad*: La homocedasticidad se evalúa en el gráfico Scale Location. Allí no se debería observar ningún comportamiento sistemático en la raíz cuadrada de los residuos estandarizados para los diferentes valores ajustados. En ambos casos, este supuesto no se cumple, excepto para los valores ajustados bajos.
+
+-   *Multicolinealidad*: La multicolinealidad se puede evaluar calculando el factor de inflación de la varianza, si la raíz cuadrada del factor de inflación de la varianza es mayor a 2, esto sugiere que hay un problema de multicolinealidad. Para el caso del modelo 1 no es necesario aplicar esta prueba, ya que es un modelo de regresión lineal simple. En el modelo 2 se puede evidenciar que la raíz cuadrada del factor de inflación de la varianza siempre es menor a 2, por lo tanto, no hay multicolinealidad.
+
+-   **Modelo 1**
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+gg_diagnose(modelo_1)
+```
+
+```{r, echo=FALSE}
+durbinWatsonTest(modelo_1)
+```
+
+-   **Modelo 2**
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+gg_diagnose(modelo_2)
+```
+
+```{r, echo=FALSE}
+durbinWatsonTest(modelo_2)
+```
+
+```{r, echo=FALSE, warning=FALSE}
+vif(modelo_2)
+sqrt(vif(modelo_2))
+```
+
+## Resultados
+
+Para lograr visualizar de manera más clara las diferencias entre los tres modelos que se analizaron, se realizó la Gráfica 8, donde se muestran los cambios en los coeficientes para cada ecuación estimada.
+
+![Grafica_8.PNG]
+
+De los resultados obtenidos en las regresiones anteriormente realizadas podemos concluir principalmente que los modelos explican en muy baja proporción la variabilidad de los datos, ya que explican menos del 10% de la variación de nuestra variable dependiente que es si los niños buscaron trabajo en las 4 semanas anteriores a la encuesta o no. Lo que nos muestra que la intuición que se tuvo en la elección de las variables independientes que son factores socioeconómicos, para la creación del modelo no fue la más acertada, pues realmente no nos permite identificar con certeza las causales del trabajo en niños de 5 a 17 años en Bogotá para el 2011.
+
+Además, con los resultados de la Gráfica 8 podemos ver que la diferencia entre los valores de los coeficientes obtenidos en los 3 modelos estimados no es muy grande, incluso el modelo 1 que solo utiliza la variable dependiente y la independiente principal se asemeja mucho en el intercepto y en dichas variables a los resultados obtenidos en modelo 2 y 3 para estas mismas variables. La mayor diferencia que se da es en la variable que representa el sexo de los niños encuestados entre los Modelos 2 y 3, también se evidencia una diferencia en la variable de educación de los niños encuestados igualmente entre los Modelos 2 y 3.
+
+## Conclusiones
+
+En primer lugar, es importante resaltar que a pesar de los modelos explican en muy baja proporción la variabilidad de los datos, lo cual nos impide identificar con certeza las causales del trabajo en niños, niñas y adolescentes bogotanos durante el 2011, es posible concluir que la hipótesis preliminar no se cumple, ya que se creía que la principal causa del trabajo infantil era la disminución de los ingresos en los hogares y que existian otros factores como la falta de educación,la edad, el sexo y la cantidad de personas que viven en el hogar que podian influir, aunque en un menor grado en la decision de trabajar o no de los niños entre los 5 y los 17 años.
+
+Luego de estimar los 3 modelos analizados anteriormente, fue evidente que la probabilidad de que un niño o niña busque trabajo depende más de las características de la persona y del hogar, que de la disminución temporal del ingreso, teniendo en cuenta que el $/R^2$ Ajustado aumentó significativamente del Modelo 1 (0.2%), que solo tuvo en cuenta la relación entre la variación del ingreso y la busqueda de trabajo infantil, al Modelo 2 (7.9%), en el que además se agregaron variables como el sexo, la edad y el nivel de educacion de los niños.
+
+Otros resultados interesantes y consistentes con las nociones generales sobre esta problematica del trabajo infantil fueron los obtenidos al analizar el comportamiento de las variables *Número de personas en el hogar*, *Sexo*, *Edad* y *Educación*. En cuanto a la primera variable, se evidencio que ante un mayor número de personaas residan en el hogar los niños no tienen la necesidad de buscar trabajo; esto podria explicarse porque entre mayor sea la cantidad de personas que pueden aportar ingresos al hogar, los niños no tienen ningún incentivo a buscar un empleo. Respecto al sexo, a pesar de que no fue posible encontrar ninguna diferencia significativa en cuanto a la busqueda de trabajo por parte de los hombre y de las mujeres, si se evidencia una mayor proporción de hombres que de mujeres que ya se encuentran trabajando. Con respecto a la variable edad, se observó una mayor probabilidad de buscar trabajo a medida que la edad del niño aumenta, es decir, es mas probable que los adolescentes busquen trabajo. Por último, la variable que representa la asistencia de los niños a una intitucíon de educación formal mostró una relación inversa con respecto a la la variable dependiente principal, es decir, que para los niños que reciben una educacón formal, es menos probable que deban buscar trabajo.
+
+Es interesante observar que algunos de los resultados obtenidos en esta investigación coinciden con otros estudios, por ejemplo, [@paz2011trabajo] también llego a la conclusión de que, a pesar de la relación a nivel teórico que pueda darse, la pobreza moentaria o las privaciones materiales no son determinantes en la decisión de los hogares de forzar el trabajo infantil. Por otra parte, [@vota2019analisis] afirma que que los niños comienzan su actividad laboral en promedio a los 8 años, lo que es consistente con los resultados obtenidos en la estadística descriptiva.
+
+## Anexos
+
+-   **Modificaciones hechas a los datos originales para obtener la base de datos que se trabajó en esta investigación**
+
+```{r, echo=FALSE}
+rm(list = ls())
+
+## Primero cargamos los datos directamente del DANE, las bases originales se peden encontrar en el siguiente link:  http://microdatos.dane.gov.co/index.php/catalog/372/datafile/F2
+
+Base_ninos <- read_sav("Datos/Enti_adultos.sav")
+Base_adultos <- read_sav("Datos/Enti_adultos.sav")
+```
+
+-   *Adecuación de la base de datos para el análisis*
+
+```{r,  echo = FALSE}
+Base_ninos <- Base_ninos %>%
+rename(Nino_trabajo = "P6280", Nino_sexo = "P220", Nino_edad = "P6037", Nino_personas_hogar = "P6008", Nino_educ = "P6170", Nino_factor_exp = Fex_c)
+
+Ninos_interes <- Base_ninos %>%
+  select(starts_with("Nino"), Directorio, Secuencia_p, Orden)
+
+Base_adultos <- Base_adultos %>%
+rename(Adult_disminucion_ing = "P6047", Adult_factor_exp = Fex_c)
+
+Adult_interes <- Base_adultos %>%
+  select(starts_with("Adult"), Directorio, Secuencia_p, Orden)
+
+Base_completa <- left_join(Ninos_interes, Adult_interes, by = c("Directorio", "Secuencia_p", "Orden"))
+
+Base_completa <- Base_completa %>%
+  relocate("Directorio", "Secuencia_p", "Orden","Nino_trabajo", "Adult_disminucion_ing", "Nino_personas_hogar", "Nino_sexo", "Nino_edad", "Nino_educ", "Adult_factor_exp", "Nino_factor_exp")
+
+rm(Adult_interes)
+rm(Ninos_interes)
+```
+
+-   *Reconocimiento de las variables como numero o factor en R*
+
+```{r,  echo = FALSE, message = FALSE, warning=FALSE}
+class(Base_completa$Directorio)
+class(Base_completa$Secuencia_p)
+class(Base_completa$Orden)
+class(Base_completa$Nino_trabajo)
+class(Base_completa$Nino_sexo)
+class(Base_completa$Nino_edad)
+class(Base_completa$Nino_personas_hogar)
+class(Base_completa$Nino_educ)
+class(Base_completa$Nino_factor_exp)
+class(Base_completa$Adult_factor_exp)
+class(Base_completa$Adult_disminucion_ing)
+
+Base_completa <- Base_completa %>% 
+  mutate(across(.cols = c(5, 7, 9), as.factor))%>% 
+  mutate(across(.cols = c(4, 6, 8), as.numeric))
+```
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
+
+## Realizamos un table para saber cuantas observaciones habia en cada categoría para cada una de las 3 variables que pretendiamos modificar.
+
+table(Base_completa$Nino_sexo)
+table(Base_completa$Nino_educ)
+table(Base_completa$Adult_disminucion_ing)
+
+Base_completa <- Base_completa %>% 
+  mutate(Nino_sexo = recode(Nino_sexo, "1=0; 2=1"))%>%
+  mutate(Nino_educ = recode(Nino_educ, "2=0; 1=1"))%>%
+  mutate(Adult_disminucion_ing = recode(Adult_disminucion_ing, "2=0; 1=1"))
+
+## Realizamos nuevamente un table para comprobar que las observaciones que habia en cada categoría para cada una de las 3 variables fuera igual.
+
+table(Base_completa$Nino_sexo)
+table(Base_completa$Nino_educ)
+table(Base_completa$Adult_disminucion_ing)
+
+save(Base_completa, file="Basecompleta.RData")
+```
+
+-   **Correlación entre cada pareja de variables cuantitativas y tablas de estadísticas descriptivas**
+
+```{r}
+correlaciones_num <- cor(Base_completa$Nino_personas_hogar, Base_completa$Nino_edad)
+correlaciones_num*100
+```
+
+```{r}
+stargazer(as.data.frame(Base_completa), type = "text", 
+          out = "tabla1.tex", 
+          title = "Tabla 1 - Estadística Descriptiva")
+
+```
+
+```{r}
+## Este fue el código utilizado para realizar la G´rafica 8
+
+## modelos <- list("Modelo 1" = modelo_1, "Modelo 2" = modelo_2, "Modelo 3" = modelo_3)
+
+## modelplot(modelos) +  labs(x= "Coeficientes estimados con un intervalo de confianza del 95%", y = "Variables de interés", title = "Gráfica 8. Variación de los coeficientes para cada modelo")
+```
+
+## Referencias
+
