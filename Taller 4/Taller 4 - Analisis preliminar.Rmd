@@ -6,12 +6,10 @@ output:
   word_document: default
   pdf_document: default
 ---
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ```{r}
 library(tidyverse)
+library(dplyr)
 library(haven)
 library(knitr)
 library(naniar)
@@ -23,15 +21,15 @@ library(GGally)
 
 ```{r}
 rm(list = ls())
-Base_ninos <- read_sav("")
+Base_ninos <- read_sav("Datos/Enti_adultos.sav")
 Base_adultos <- read_sav("Datos/Enti_adultos.sav")
 ```
 
 ## Adecuación de la base de datos para el análisis
 
-```{r}
+```{r,  echo = FALSE}
 Base_ninos <- Base_ninos %>%
-rename(Ninos_tiempo = "P6237", Nino_sexo = "P220", Nino_edad = "P6037", Nino_personas_hogar = "P6008", Nino_educ = "P6170", Nino_factor_exp = Fex_c)
+rename(Nino_trabajo = "P6280", Nino_sexo = "P220", Nino_edad = "P6037", Nino_personas_hogar = "P6008", Nino_educ = "P6170", Nino_factor_exp = Fex_c)
 
 Ninos_interes <- Base_ninos %>%
   select(starts_with("Nino"), Directorio, Secuencia_p, Orden)
@@ -45,9 +43,55 @@ Adult_interes <- Base_adultos %>%
 Base_completa <- left_join(Ninos_interes, Adult_interes, by = c("Directorio", "Secuencia_p", "Orden"))
 
 Base_completa <- Base_completa %>%
-  relocate("Directorio", "Secuencia_p", "Orden","Ninos_tiempo", "Adult_disminucion_ing", "Nino_personas_hogar", "Nino_sexo", "Nino_edad", "Nino_educ", "Adult_factor_exp", "Nino_factor_exp")
+  relocate("Directorio", "Secuencia_p", "Orden","Nino_trabajo", "Adult_disminucion_ing", "Nino_personas_hogar", "Nino_sexo", "Nino_edad", "Nino_educ", "Adult_factor_exp", "Nino_factor_exp")
 
 ```
+
+### Reconocimiento de las variables como numero o factor en R
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
+class(Base_completa$Directorio)
+class(Base_completa$Secuencia_p)
+class(Base_completa$Orden)
+class(Base_completa$Nino_trabajo)
+class(Base_completa$Nino_sexo)
+class(Base_completa$Nino_edad)
+class(Base_completa$Nino_personas_hogar)
+class(Base_completa$Nino_educ)
+class(Base_completa$Nino_factor_exp)
+class(Base_completa$Adult_factor_exp)
+class(Base_completa$Adult_disminucion_ing)
+
+Base_completa <- Base_completa %>% 
+  mutate(across(.cols = c(4, 5, 7, 9), as.factor))%>% 
+  mutate(across(.cols = c(6, 8), as.numeric))
+```
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
+
+## Realizamos un table para saber cuantas observaciones habia en cada categoría para cada una de las 3 variables que pretendiamos modificar.
+
+table(Base_completa$Nino_sexo)
+table(Base_completa$Mujer)
+table(Base_completa$Nino_educ)
+table(Base_completa$Asistencia)
+table(Base_completa$Nino_trabajo)
+table(Base_completa$Trabajo)
+
+Base_completa <- Base_completa %>% 
+  mutate(Mujer = recode(Nino_sexo, "1=0; 2=1"))%>%
+  mutate(Asistencia = recode(Nino_educ, "2=0; 1=1"))%>%
+  mutate(Trabajo = recode(Nino_trabajo, "2=0; 1=1"))
+
+## Realizamos nuevamente un table para comprobar que las observaciones que habia en cada categoría para cada una de las 3 variables fuera igual.
+
+table(Base_completa$Nino_sexo, Base_completa$Mujer)
+table(Base_completa$Nino_educ, Base_completa$Asistencia)
+table(Base_completa$Nino_trabajo, Base_completa$Trabajo)
+
+save(Base_completa, file = "Basefinal.RData", ascii = TRUE)
+```
+
 
 ## Manejo de valores faltantes
 
@@ -61,16 +105,12 @@ Finalmente, todas las variables obtenidas de la base de datos de los niños teni
 faltantes_antes <- vis_miss(Base_completa)
 faltantes_antes
 
-ggsave( "Faltantes_antes.pdf", faltantes_antes)
-
 Base_completa <- replace_na(data = Base_completa, replace = list(Adult_disminucion_ing = 0))
-Base_completa <- fill(Base_completa, Adult_factor_exp)
-Base_completa <-na.omit(Base_completa)
+Base_completa <- group_by(Directorio, fill(Base_completa, Adult_factor_exp))
+Base_completa <- na.omit(Base_completa)
 
 faltantes_final <- vis_miss(Base_completa)
 faltantes_final
-
-ggsave( "Faltantes_final.pdf", faltantes_final)
 ```
 
 ## Reconocimiento de las variables como numero o factor en R
@@ -194,7 +234,6 @@ ggplot(data = Base_completa, mapping = aes(x = Nino_edad )) +
   facet_wrap(vars(Ninos_tiempo))+
   labs(x= "Edad de los niños", y= "Frecuencia", title = "Relación entre la edad de los niños y la distribución de su tiempo")
 ```
-
 
 ```{r}
 ggplot(data = Base_completa, mapping = aes(x = Nino_personas_hogar)) + 

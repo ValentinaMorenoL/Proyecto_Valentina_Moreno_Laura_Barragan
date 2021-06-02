@@ -146,6 +146,11 @@ class(Base_completa$Nino_sexo)
 class(Base_completa$Nino_educ)
 class(Base_completa$Nino_trabajo)
 
+
+#Guardar base de datos
+
+save(Base_completa, file = "Base completa R", ascii = TRUE)
+
 ```
 
 ## Plan de análisis
@@ -181,7 +186,7 @@ Adicionalmente, el $R^2$ (0,0001) indica que este modelo explica tan solo el 0.0
 
 La segunda regresión que se analizará tendrá en cuenta el efecto de la disminución de los ingresos durante los últimos 12 meses, el numero de personas en el hogar, el sexo, la edad que registraron en la encuesta y la asistencia del infante una institución de educación formal sobre la busqueda de trabajo por parte de los niños durante el último mes. La ecuación es la siguiente:
 
-  $Y = \beta_0 + \beta_1I + \beta_2P + \beta_3J + \beta_3S + \beta\_4E + \beta\_5A + e $
+  $Y = \beta_0 + \beta_1I + \beta_2P + \beta_3J + \beta_3S + \beta\_4E + \beta\_5A + e$
 
 Donde las variables *Y, I y e* tienen el mismo significado que en la ecuacion anterior; P muestra el número de personas que viven en el hogar; J es una variable dicotómica que toma el valor de 1 cuando el niño tiene entre 5 y 17 años y vive con otros adultos y 0 cuando el adolescente tiene entre 12 y 17 años y es jefe del hogar; S es una variable dicotómica que toma el valor de 1 cuando el sexo es femenino y 0 cuando es masculino; E toma valores entre 5 y 17 y representa la edad que registraron los niños en el momento de la encuesta y finalmente, A es una variable dicotómica que toma el valor de 1 cuando el infante asiste a una institución de educación formal y 0 en el el caso contrario.
 
